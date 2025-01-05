@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.shprobotics.pestocore.drivebases.MecanumController;
 import com.shprobotics.pestocore.drivebases.TeleOpController;
@@ -23,8 +24,6 @@ public class test extends LinearOpMode {
     private DcMotor opodC;
     private DcMotor opodR;
 
-    //ADD DISTANCE SENSOR AND COLOR SENSOR
-
 
     @Override
     public void runOpMode() {
@@ -39,22 +38,22 @@ public class test extends LinearOpMode {
 
         wormGearMotor = hardwareMap.get(DcMotor.class, "wormGear");
         wormGearMotor.setDirection(DcMotorSimple.Direction.FORWARD);
-        wormGearMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        wormGearMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         wormGearMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
         strongArmMotor = hardwareMap.get(DcMotor.class, "strongArm");
         strongArmMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-        strongArmMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        strongArmMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         strongArmMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         strongArm2Motor = hardwareMap.get(DcMotor.class, "strongArm2");
         strongArm2Motor.setDirection(DcMotorSimple.Direction.REVERSE);
-        strongArm2Motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        strongArm2Motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         strongArm2Motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         viperslide = hardwareMap.get(DcMotor.class, "viperSlide");
         viperslide.setDirection(DcMotorSimple.Direction.FORWARD);
-        viperslide.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        viperslide.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         viperslide.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         claw = hardwareMap.get(Servo.class, "Claw");
