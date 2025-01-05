@@ -38,14 +38,6 @@ public class AutoCompRed1 extends LinearOpMode {
 //        backLeft.setDirection(DcMotorSimple.Direction.FORWARD);
 //        backRight.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        //Strafe Right
-//        frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
-//        frontRight.setDirection(DcMotorSimple.Direction.FORWARD);
-//        backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
-//        backRight.setDirection(DcMotorSimple.Direction.FORWARD);
-//       spinner.setDirection(Servo.Direction.REVERSE);
-
-        //Strafe left
         frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         frontRight.setDirection(DcMotorSimple.Direction.FORWARD);
         backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -57,67 +49,83 @@ public class AutoCompRed1 extends LinearOpMode {
         while (opModeIsActive())  {
 
             //Strafe Right
-//            frontLeft.setPower(0.5);
-//            frontRight.setPower(-0.5);
-//            backLeft.setPower(-0.5);
-//            backRight.setPower(0.5);
+//          frontLeft.setPower(0.5);
+//          frontRight.setPower(-0.5);
+//          backLeft.setPower(-0.5);
+//          backRight.setPower(0.5);
 
-            //Strafe left
-            frontLeft.setPower(0.5);
-            frontRight.setPower(-0.5);
-            backLeft.setPower(-0.5);
-            backRight.setPower(0.5);
-
-
+            //Strafe left: PHASE 1
+            frontLeft.setPower(-0.5);
+            frontRight.setPower(0.5);
+            backLeft.setPower(0.5);
+            backRight.setPower(-0.5);
 
             sleep(1000);
 
             //STRAFE Right: 0.5 power for 1 second goes ~15in (~width of the bot itself)
+            //STRAFE Left: 0.5 power for 1 second goes ~15in (~width of the bot itself)
 
-            //Drive Forward
-            frontLeft.setPower(0.5);
+//          //Drive Forward
+//          frontLeft.setPower(0.5);
+//          frontRight.setPower(0.5);
+//          backLeft.setPower(0.6);
+//          backRight.setPower(0.5);
+
+            //Drive Backward: PHASE 2
+            frontLeft.setPower(-0.5);
+            frontRight.setPower(-0.5);
+            backLeft.setPower(-0.62);
+            backRight.setPower(-0.5);
+
+            sleep(1500);
+
+            //Strafe left: PHASE 3
+            frontLeft.setPower(-0.5);
             frontRight.setPower(0.5);
-            backLeft.setPower(0.6);
-            backRight.setPower(0.5);
+            backLeft.setPower(0.5);
+            backRight.setPower(-0.5);
 
-            sleep(1000);
-
-            //DRIVE FORWARD: 0.5 power for 1 second goes 32in
+            sleep(750);
 
             //ALL STOP FOR TESTING
             frontLeft.setPower(0.0);
             frontRight.setPower(0.0);
             backLeft.setPower(0.0);
             backRight.setPower(0.0);
+
             sleep(1000);
 
             requestOpModeStop();
+//
+//          sleep(1000);
 
-//            //Strafe Right
-//            frontLeft.setPower(0.1);
-//            frontRight.setPower(-0.1);
-//            backLeft.setPower(-0.1);
-//            backRight.setPower(0.1);
+            //DRIVE FORWARD: 0.5 power for 1 second goes 32in
+            //DRIVE BACKWARD: 0.5 power for 1 second goes 32in
+
+
+//          //Strafe Right
+//          frontLeft.setPower(0.1);
+//          frontRight.setPower(-0.1);
+//          backLeft.setPower(-0.1);
+//          backRight.setPower(0.1);
+
+//            //Strafe Left: PHASE 3
+//            frontLeft.setPower(-0.1);
+//            frontRight.setPower(0.1);
+//            backLeft.setPower(0.1);
+//            backRight.setPower(-0.1);
 //
 //            sleep(1200);
 
             //STRAFE RIGHT: 0.5 power for 1 second goes ~15in (~width of the bot itself)
 
-//            //Turn Right
-//            frontLeft.setPower(0.3);
-//            frontRight.setPower(-0.3);
-//            backLeft.setPower(0.3);
-//            backRight.setPower(-0.3);
-//
-//            sleep(1000);
-
-//            //Drive Forward
+////          //Drive Forward: PHASE 4
 //            frontLeft.setPower(0.7);
 //            frontRight.setPower(0.7);
 //            backLeft.setPower(0.7);
 //            backRight.setPower(0.7);
-//
-//            sleep(1000);
+////
+////            sleep(1000);
 
             //DRIVE FORWARD: 0.5 power for 1 second goes 32in
 
