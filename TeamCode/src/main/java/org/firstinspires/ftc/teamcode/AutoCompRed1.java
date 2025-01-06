@@ -111,7 +111,7 @@ public class AutoCompRed1 extends LinearOpMode {
             //Drive Backward: PHASE 5
             frontLeft.setPower(-0.5);
             frontRight.setPower(-0.5);
-            backLeft.setPower(-0.5);
+            backLeft.setPower(-0.4);
             backRight.setPower(-0.5);
 
             sleep(1500);
@@ -122,15 +122,15 @@ public class AutoCompRed1 extends LinearOpMode {
             backLeft.setPower(0.5);
             backRight.setPower(-0.5);
 
-            sleep(750);
+            sleep(650);
 
             //Drive Forward: PHASE 7
             frontLeft.setPower(0.5);
             frontRight.setPower(0.5);
-            backLeft.setPower(0.5);
+            backLeft.setPower(0.6);
             backRight.setPower(0.5);
 
-            sleep(1300);
+            sleep(1200);
 
             //ALL STOP
             frontLeft.setPower(0.0);
@@ -141,20 +141,12 @@ public class AutoCompRed1 extends LinearOpMode {
             sleep(1000);
 
             //Drive Backward: PHASE 8
-            frontLeft.setPower(-0.5);
-            frontRight.setPower(-0.5);
-            backLeft.setPower(-0.5);
-            backRight.setPower(-0.5);
+            frontLeft.setPower(-0.2);
+            frontRight.setPower(-0.2);
+            backLeft.setPower(-0.2);
+            backRight.setPower(-0.2);
 
-            sleep(1300);
-
-            //Strafe left: PHASE 9
-            frontLeft.setPower(-0.5);
-            frontRight.setPower(0.5);
-            backLeft.setPower(0.5);
-            backRight.setPower(-0.5);
-
-            sleep(750);
+            sleep(500);
 
             //ALL STOP FOR TESTING
             frontLeft.setPower(0.0);
@@ -166,8 +158,33 @@ public class AutoCompRed1 extends LinearOpMode {
 
             requestOpModeStop();
 
-            //SET PARAMETERS FOR THE BOT TO STOP WHEN DISTANCE SENSOR DETECTS WALL NEAR OBSERVATION ZONE
+            //SET PARAMETERS FOR SPECIMEN COLLECTION
 
+//
+            //Strafe left: PHASE 9
+//            frontLeft.setPower(-0.5);
+//            frontRight.setPower(0.5);
+//            backLeft.setPower(0.5);
+//            backRight.setPower(-0.5);
+//
+//            sleep(500);
+//
+//            //Drive Forward: PHASE 10
+//            frontLeft.setPower(0.5);
+//            frontRight.setPower(0.6);
+//            backLeft.setPower(0.4);
+//            backRight.setPower(0.5);
+//
+//            sleep(900);
+
+//            //ALL STOP
+//            frontLeft.setPower(0.0);
+//            frontRight.setPower(0.0);
+//            backLeft.setPower(0.0);
+//            backRight.setPower(0.0);
+//
+//            sleep(1000);
+//
 
 
 
