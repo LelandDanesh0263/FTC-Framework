@@ -87,6 +87,75 @@ public class AutoCompRed1 extends LinearOpMode {
 
             sleep(750);
 
+            //Drive left: 750ms goes 12"
+
+            //Drive Forward: PHASE 4
+            frontLeft.setPower(0.5);
+            frontRight.setPower(0.5);
+            backLeft.setPower(0.5);
+            backRight.setPower(0.5);
+
+            sleep(1300);
+
+            //DRIVE FORWARD: 0.5 power for 1.2 second goes 50in
+
+            //ALL STOP
+            frontLeft.setPower(0.0);
+            frontRight.setPower(0.0);
+            backLeft.setPower(0.0);
+            backRight.setPower(0.0);
+
+            sleep(1000);
+
+
+            //Drive Backward: PHASE 5
+            frontLeft.setPower(-0.5);
+            frontRight.setPower(-0.5);
+            backLeft.setPower(-0.5);
+            backRight.setPower(-0.5);
+
+            sleep(1500);
+
+            //Strafe left: PHASE 6
+            frontLeft.setPower(-0.5);
+            frontRight.setPower(0.5);
+            backLeft.setPower(0.5);
+            backRight.setPower(-0.5);
+
+            sleep(750);
+
+            //Drive Forward: PHASE 7
+            frontLeft.setPower(0.5);
+            frontRight.setPower(0.5);
+            backLeft.setPower(0.5);
+            backRight.setPower(0.5);
+
+            sleep(1300);
+
+            //ALL STOP
+            frontLeft.setPower(0.0);
+            frontRight.setPower(0.0);
+            backLeft.setPower(0.0);
+            backRight.setPower(0.0);
+
+            sleep(1000);
+
+            //Drive Backward: PHASE 8
+            frontLeft.setPower(-0.5);
+            frontRight.setPower(-0.5);
+            backLeft.setPower(-0.5);
+            backRight.setPower(-0.5);
+
+            sleep(1300);
+
+            //Strafe left: PHASE 9
+            frontLeft.setPower(-0.5);
+            frontRight.setPower(0.5);
+            backLeft.setPower(0.5);
+            backRight.setPower(-0.5);
+
+            sleep(750);
+
             //ALL STOP FOR TESTING
             frontLeft.setPower(0.0);
             frontRight.setPower(0.0);
@@ -96,7 +165,14 @@ public class AutoCompRed1 extends LinearOpMode {
             sleep(1000);
 
             requestOpModeStop();
-//
+
+            //SET PARAMETERS FOR THE BOT TO STOP WHEN DISTANCE SENSOR DETECTS WALL NEAR OBSERVATION ZONE
+
+
+
+
+
+
 //          sleep(1000);
 
             //DRIVE FORWARD: 0.5 power for 1 second goes 32in
