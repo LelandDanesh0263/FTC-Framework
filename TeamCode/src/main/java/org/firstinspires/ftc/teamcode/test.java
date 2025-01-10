@@ -4,7 +4,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.shprobotics.pestocore.drivebases.MecanumController;
 import com.shprobotics.pestocore.drivebases.TeleOpController;
@@ -13,7 +12,6 @@ import com.shprobotics.pestocore.geometries.Pose2D;
 
 @TeleOp
 public class test extends LinearOpMode {
-
     private DcMotor wormGearMotor;
     private DcMotor strongArmMotor;
     private DcMotor strongArm2Motor;

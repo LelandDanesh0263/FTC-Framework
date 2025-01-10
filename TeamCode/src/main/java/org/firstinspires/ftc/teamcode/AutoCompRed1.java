@@ -5,7 +5,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
-import com.qualcomm.robotcore.hardware.Servo;
 import com.shprobotics.pestocore.drivebases.MecanumController;
 import com.shprobotics.pestocore.drivebases.ThreeWheelOdometryTracker;
 
@@ -18,7 +17,8 @@ public class AutoCompRed1 extends LinearOpMode {
     private DcMotor frontRight;
     private DcMotor backLeft;
     private DcMotor backRight;
-    private Servo spinner;
+    private DcMotor wormGearMotor;
+    private DcMotor viperslide;
     private DistanceSensor DistanceSensor;
 
     @Override
@@ -30,7 +30,8 @@ public class AutoCompRed1 extends LinearOpMode {
         frontRight = hardwareMap.get(DcMotor.class, "frontRight");
         backLeft = hardwareMap.get(DcMotor.class, "backLeft");
         backRight = hardwareMap.get(DcMotor.class, "backRight");
-        spinner = hardwareMap.get(Servo.class, "Spinner");
+        wormGearMotor = hardwareMap.get(DcMotor.class, "wormGear");
+        viperslide = hardwareMap.get(DcMotor.class, "viperSlide");
         DistanceSensor = hardwareMap.get(DistanceSensor.class, "Distance Sensor");
 
 //        frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -42,11 +43,25 @@ public class AutoCompRed1 extends LinearOpMode {
         frontRight.setDirection(DcMotorSimple.Direction.FORWARD);
         backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         backRight.setDirection(DcMotorSimple.Direction.FORWARD);
-        spinner.setDirection(Servo.Direction.REVERSE);
+        wormGearMotor.setDirection(DcMotorSimple.Direction.FORWARD);
+        viperslide.setDirection(DcMotorSimple.Direction.FORWARD);
 
         waitForStart();
 
-        while (opModeIsActive())  {
+        while (opModeIsActive()) {
+
+            //Drive Forward: PRELOAD PHASE 1
+            frontLeft.setPower(0.3);
+            frontRight.setPower(0.3);
+            backLeft.setPower(0.3);
+            backRight.setPower(0.3);
+
+            sleep(1300);
+
+            //Intake Positioning: PRELOAD PHASE 2
+//            wormGearMotor.setTargetPosition(0);
+//            viperslide.setTargetPosition();
+
 
             //Strafe Right
 //          frontLeft.setPower(0.5);
@@ -55,10 +70,10 @@ public class AutoCompRed1 extends LinearOpMode {
 //          backRight.setPower(0.5);
 
             //Strafe left: PHASE 1
-            frontLeft.setPower(-0.5);
-            frontRight.setPower(0.5);
-            backLeft.setPower(0.5);
-            backRight.setPower(-0.5);
+            frontLeft.setPower(-0.9);
+            frontRight.setPower(0.9);
+            backLeft.setPower(0.9);
+            backRight.setPower(-0.9);
 
             sleep(1000);
 
@@ -132,36 +147,36 @@ public class AutoCompRed1 extends LinearOpMode {
 
             sleep(1200);
 
-            //ALL STOP
-            frontLeft.setPower(0.0);
-            frontRight.setPower(0.0);
-            backLeft.setPower(0.0);
-            backRight.setPower(0.0);
+                //ALL STOP
+                frontLeft.setPower(0.0);
+                frontRight.setPower(0.0);
+                backLeft.setPower(0.0);
+                backRight.setPower(0.0);
 
-            sleep(1000);
+                sleep(1000);
 
-            //Drive Backward: PHASE 8
-            frontLeft.setPower(-0.2);
-            frontRight.setPower(-0.2);
-            backLeft.setPower(-0.2);
-            backRight.setPower(-0.2);
+                //Drive Backward: PHASE 8
+                frontLeft.setPower(-0.2);
+                frontRight.setPower(-0.2);
+                backLeft.setPower(-0.2);
+                backRight.setPower(-0.2);
 
-            sleep(500);
+                sleep(500);
 
-            //ALL STOP FOR TESTING
-            frontLeft.setPower(0.0);
-            frontRight.setPower(0.0);
-            backLeft.setPower(0.0);
-            backRight.setPower(0.0);
+                //ALL STOP FOR TESTING
+                frontLeft.setPower(0.0);
+                frontRight.setPower(0.0);
+                backLeft.setPower(0.0);
+                backRight.setPower(0.0);
 
-            sleep(1000);
+                sleep(1000);
 
-            requestOpModeStop();
+                requestOpModeStop();
 
-            //SET PARAMETERS FOR SPECIMEN COLLECTION
+                //SET PARAMETERS FOR SPECIMEN COLLECTION
 
 //
-            //Strafe left: PHASE 9
+                //Strafe left: PHASE 9
 //            frontLeft.setPower(-0.5);
 //            frontRight.setPower(0.5);
 //            backLeft.setPower(0.5);
@@ -187,13 +202,10 @@ public class AutoCompRed1 extends LinearOpMode {
 //
 
 
-
-
-
 //          sleep(1000);
 
-            //DRIVE FORWARD: 0.5 power for 1 second goes 32in
-            //DRIVE BACKWARD: 0.5 power for 1 second goes 32in
+                //DRIVE FORWARD: 0.5 power for 1 second goes 32in
+                //DRIVE BACKWARD: 0.5 power for 1 second goes 32in
 
 
 //          //Strafe Right
@@ -210,7 +222,7 @@ public class AutoCompRed1 extends LinearOpMode {
 //
 //            sleep(1200);
 
-            //STRAFE RIGHT: 0.5 power for 1 second goes ~15in (~width of the bot itself)
+                //STRAFE RIGHT: 0.5 power for 1 second goes ~15in (~width of the bot itself)
 
 ////          //Drive Forward: PHASE 4
 //            frontLeft.setPower(0.7);
@@ -220,9 +232,9 @@ public class AutoCompRed1 extends LinearOpMode {
 ////
 ////            sleep(1000);
 
-            //DRIVE FORWARD: 0.5 power for 1 second goes 32in
+                //DRIVE FORWARD: 0.5 power for 1 second goes 32in
 
-            //SET PARAMETERS FOR THE BOT TO STOP WHEN DISTANCE SENSOR DETECTS WALL NEAR OBSERVATION ZONE
+                //SET PARAMETERS FOR THE BOT TO STOP WHEN DISTANCE SENSOR DETECTS WALL NEAR OBSERVATION ZONE
 
 //            //Strafe Left
 //            frontLeft.setPower(-0.5);

@@ -89,7 +89,7 @@ public class PestoFTCConfig {
         return teleOpController;
     }
 
-   public static ThreeWheelOdometryTracker getTracker(HardwareMap hardwareMap) {
+    public static ThreeWheelOdometryTracker getTracker(HardwareMap hardwareMap) {
         return new ThreeWheelOdometryTracker.TrackerBuilder(
                 hardwareMap,
                 ODOMETRY_TICKS_PER_INCH,
